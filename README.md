@@ -134,7 +134,7 @@ Open `Frontend/index.html` in a browser to interact with the summarization API v
 
 ## 🗒 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for details.
 
 ---
 
