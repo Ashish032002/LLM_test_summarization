@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Summarizer</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI Text Summarizer</h1>
+            <p>Transform long text into clear, concise summaries using advanced AI</p>
+        </div>
+
+        <div class="card">
+            <div class="input-group">
+                <label for="input-text">Your Text</label>
+                <textarea
+                    id="input-text"
+                    placeholder="Paste your text here (minimum 100 characters recommended)..."
+                    spellcheck="true"
+                ></textarea>
+            </div>
+
+            <div class="controls">
+                <div class="parameter">
+                    <label for="max-length">Maximum Length</label>
+                    <input
+                        type="number"
+                        id="max-length"
+                        value="150"
+                        min="50"
+                        max="500"
+                        title="Maximum number of words in the summary"
+                    >
+                </div>
+                <div class="parameter">
+                    <label for="min-length">Minimum Length</label>
+                    <input
+                        type="number"
+                        id="min-length"
+                        value="40"
+                        min="10"
+                        max="100"
+                        title="Minimum number of words in the summary"
+                    >
+                </div>
+                <div class="parameter">
+                    <label for="num-beams">Quality Level</label>
+                    <input
+                        type="number"
+                        id="num-beams"
+                        value="4"
+                        min="1"
+                        max="8"
+                        title="Higher numbers provide better quality but take longer"
+                    >
+                </div>
+            </div>
+
+            <button id="summarize-btn" class="btn" onclick="summarizeText()">
+                Summarize Text
+            </button>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="loading-spinner"></div>
+            <p>Analyzing and summarizing your text...</p>
+        </div>
+
+        <div class="error" id="error"></div>
+
+        <div class="card" id="results-card" style="display: none;">
+            <label>Summary</label>
+            <div class="summary-container" id="summary"></div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="original-length">0</div>
+                    <div class="stat-label">Original Words</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="summary-length">0</div>
+                    <div class="stat-label">Summary Words</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="processing-time">0</div>
+                    <div class="stat-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
